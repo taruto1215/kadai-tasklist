@@ -50,10 +50,10 @@ class TasksController < ApplicationController
   
   #strong parameter
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
   
-  def set_params
+  def set_task
     @task = Task.find(params[:id])
   end
 end
